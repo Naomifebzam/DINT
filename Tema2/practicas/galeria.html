@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Galeriaa de imagenes con la propiedad Flex</title>
+    <style>
+        .cont-flex {
+            display: flex;
+            background-color: rgb(115, 207, 177);
+            /*flex-wrap: wrap; */
+            flex-flow: row wrap;
+
+
+
+        }
+
+        .cont-flex>div {
+            width: 250px;
+            height: 250px;
+            box-shadow: 3px 3px rgb(238, 151, 80);
+            text-align: center;
+            margin: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        h1 {
+            background-color: rgb(150, 147, 147);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .sticky+.content {
+            padding-top: 60px;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        #navbar {
+            overflow: hidden;
+            background-color: rgb(150, 147, 147);
+        }
+
+        #navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        #navbar a:hover {
+            background-color: #ddd;
+            color: rgb(161, 156, 156);
+        }
+
+        #navbar a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <h1>Galeria de imagenes con la propiedad Flex</h1>
+    </div>
+    <div class="cont-flex">
+        <div><img src="img/imagen.jpg" alt="hoja"></div>
+        <div><img src="img/imagen.jpg" alt="hoja"></div>
+        <div><img src="img/imagen.jpg" alt="hoja"></div>
+        <div><img src="img/imagen.jpg" alt="hoja"></div>
+        <div><img src="img/imagen.jpg" alt="hoja"></div>
+        <div><img src="img/imagen.jpg" alt="hoja"></div>
+        <div><img src="img/imagen.jpg" alt="hoja"></div>
+        <div><img src="img/imagen.jpg" alt="hoja"></div>
+        <div><img src="img/imagen.jpg" alt="hoja"></div>
+        <div><img src="img/imagen.jpg" alt="hoja"></div>
+        <div><img src="img/imagen.jpg" alt="hoja"></div>
+    </div>
+
+    <script>
+        window.onscroll = function () {
+            myFunction()
+        };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+</body>
+
+</html>
